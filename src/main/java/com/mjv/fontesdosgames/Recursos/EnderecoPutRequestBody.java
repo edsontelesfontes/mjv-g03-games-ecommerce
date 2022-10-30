@@ -1,38 +1,18 @@
-package com.mjv.fontesdosgames.Model;
+package com.mjv.fontesdosgames.Recursos;
 
-import javax.persistence.*;
+import javax.persistence.Column;
 
-//@Embeddable
-@Entity
-@Table(name = "tab_endereco")
-public class Endereco {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class EnderecoPutRequestBody {
     private Long Id;
 
-    @Column(name = "logradouro",length = 50, nullable = false)
     private String lougradouro;
-    @Column(name = "cep",length = 10, nullable = false)
     private String cep;
-    @Column(name = "numero",length = 6, nullable = false)
-
     private Integer numero;
-    @Column(name = "cidade",length = 50, nullable = false)
-
     private String cidade;
-    @Column(name = "bairro",length = 30, nullable = false)
     private String bairro;
-    @Column(name = "complemento",length = 50, nullable = true)
-
     private String complemento;
-    @Column(name = "uf", length = 2, nullable = false)
-
     private String uf;
-    @Column(name = "pais",length = 15, nullable = false)
-
     private String pais;
-
 
     public Long getId() {
         return Id;
@@ -40,14 +20,6 @@ public class Endereco {
 
     public void setId(Long id) {
         Id = id;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
     }
 
     public String getLougradouro() {
@@ -72,6 +44,14 @@ public class Endereco {
 
     public void setNumero(Integer numero) {
         this.numero = numero;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
     public String getBairro() {

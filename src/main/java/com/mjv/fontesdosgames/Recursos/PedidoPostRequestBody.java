@@ -1,39 +1,20 @@
-package com.mjv.fontesdosgames.Model;
+package com.mjv.fontesdosgames.Recursos;
 
 import com.mjv.fontesdosgames.Enums.EnumStatusPagamento;
+import com.mjv.fontesdosgames.Model.Produto;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "pedido")
-public class Pedido {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(name = "dataDaCompra", nullable = false)
+public class PedidoPostRequestBody {
+
     private LocalDateTime dataDaCompra;
-    @Enumerated(value = EnumType.STRING)
     private EnumStatusPagamento enumStatusPagamento;
-    @Column(name = "valortotalDaCompra", nullable = false)
     private Double valorTotalDaCompra;
 
-    //@ManyToOne(cascade = CascadeType.ALL)
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "item_id")
-    private List<PedidoItem> pedidoItems;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private List<Produto> produto = new ArrayList<>();
 
     public LocalDateTime getDataDaCompra() {
         return dataDaCompra;
@@ -59,12 +40,7 @@ public class Pedido {
         this.valorTotalDaCompra = valorTotalDaCompra;
     }
 
-
-    public List<PedidoItem> getPedidoItems() {
-        return pedidoItems;
-    }
-
-    public void setPedidoItems(List<PedidoItem> pedidoItems) {
-        this.pedidoItems = pedidoItems;
+    public List<Produto> getProduto() {
+        return produto;
     }
 }

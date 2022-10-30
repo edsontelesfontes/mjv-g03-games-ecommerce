@@ -1,37 +1,21 @@
-package com.mjv.fontesdosgames.Model;
+package com.mjv.fontesdosgames.Recursos;
+
+import com.mjv.fontesdosgames.Model.Endereco;
+import com.mjv.fontesdosgames.Model.Pedido;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "usuario")
-public class Usuario {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UsuarioComPedido {
     private Long Id;
-    @Column(name = "quantidade", length = 100, nullable = false)
-
     private String nome;
-    @Column(name = "senha", length = 15, nullable = false)
     private String senha;
-    @Column(name = "dataDeRegistro", nullable = false)
-
     private LocalDate dataDeRegistro;
-    @Column(name = "email", length = 50, nullable = false)
     private String email;
-    //@Embedded
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "endereco_id")
     private Endereco endereco;
-
-
-    @OneToMany(cascade =CascadeType.ALL)
-    @JoinColumn(name = "pedido_id")
     private List<Pedido> pedidoList = new ArrayList<>();
-
 
     public Long getId() {
         return Id;
@@ -85,7 +69,4 @@ public class Usuario {
         return pedidoList;
     }
 
-//    public void setPedidoList(List<Pedido> pedidoList) {
-//        this.pedidoList = pedidoList;
-//    }
 }

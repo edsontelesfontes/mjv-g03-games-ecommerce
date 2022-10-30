@@ -1,24 +1,15 @@
-package com.mjv.fontesdosgames.Model;
+package com.mjv.fontesdosgames.Recursos;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-
-@Entity
-@Table(name = "produto")
-public class Produto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ProdutoPutRequestBody {
     private Long id;
-    @Column(name = "nome", length = 50, nullable = false)
-    private String nome;
-    @Column(name = "descricao", length = 50)
-    private String descricao;
-    @Column(name = "preco", nullable = false)
-    private Double preco;
-    @Column(name = "desenvolvedora", length = 50, nullable = false)
-    private String desenvolvedora;
 
+    private String nome;
+
+    private String descricao;
+
+    private Double preco;
+
+    private String desenvolvedora;
 
     public Long getId() {
         return id;

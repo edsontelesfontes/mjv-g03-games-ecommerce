@@ -1,44 +1,23 @@
-package com.mjv.fontesdosgames.Model;
+package com.mjv.fontesdosgames.Recursos;
 
-import javax.persistence.*;
+import com.mjv.fontesdosgames.Model.Endereco;
+
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
-@Entity
-@Table(name = "usuario")
-public class Usuario {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
-    @Column(name = "quantidade", length = 100, nullable = false)
-
+public class UsuarioPutRequestBody {
+    private Long id;
     private String nome;
-    @Column(name = "senha", length = 15, nullable = false)
     private String senha;
-    @Column(name = "dataDeRegistro", nullable = false)
-
     private LocalDate dataDeRegistro;
-    @Column(name = "email", length = 50, nullable = false)
     private String email;
-    //@Embedded
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "endereco_id")
     private Endereco endereco;
 
-
-    @OneToMany(cascade =CascadeType.ALL)
-    @JoinColumn(name = "pedido_id")
-    private List<Pedido> pedidoList = new ArrayList<>();
-
-
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getNome() {
@@ -80,12 +59,4 @@ public class Usuario {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
-
-    public List<Pedido> getPedidoList() {
-        return pedidoList;
-    }
-
-//    public void setPedidoList(List<Pedido> pedidoList) {
-//        this.pedidoList = pedidoList;
-//    }
 }
