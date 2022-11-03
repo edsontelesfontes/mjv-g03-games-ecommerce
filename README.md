@@ -59,7 +59,7 @@ http://localhost:8080/swagger-ui/index.html
 
 ##### Endpoints
 * Usuário
-<img src=" https://imgur.com/CeBbkcL.png">
+<img src="https://imgur.com/CeBbkcL.png">
 
 * Pedido
 <img src = "https://imgur.com/GrquuyO.png">
