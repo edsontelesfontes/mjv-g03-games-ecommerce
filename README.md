@@ -31,7 +31,7 @@ A Arquitetura da nossa plataforma é constituida por:
 | repository | Intefarces para persistências de dados com base no Spring Data JPA                                        |
 | service    | Classes contendo todas as regras de negócio da aplicação                                                  |
 | controller | Recursos HTTPs para disponibilizar o acesso as funcionalidades da aplicação                               |
-    | Mapper     | Recursos para mapeamento de dtos e entidades para criar uma "blindagem" gerando consistência da nossa API |
+| Mapper     | Recursos para mapeamento de dtos e entidades para criar uma "blindagem" gerando consistência da nossa API |
 
 **Módulos:**
 
