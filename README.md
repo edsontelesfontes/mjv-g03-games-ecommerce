@@ -20,7 +20,7 @@ abaixo um exemplo da plataforma.
 
 A Arquitetura da nossa plataforma é constituida por:
 #### Diagrama de classe
-<img src ="https://imgur.com/cZV9idi.png">
+<img src ="https://imgur.com/OeYStGv.png">
 
 **Pacotes:**
 
