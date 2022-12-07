@@ -20,11 +20,10 @@ abaixo um exemplo da plataforma.
 
 A Arquitetura da nossa plataforma é constituida por:
 #### Diagrama de classe
-<<<<<<< HEAD
+
 <img src ="https://imgur.com/cZV9idi.png">
 =======
 <img src ="https://imgur.com/GusJzfW.png">
->>>>>>> remotes/origin/main
 
 **Pacotes:**
 
@@ -63,11 +62,11 @@ http://localhost:8080/swagger-ui/index.html
 
 ##### Endpoints
 * Usuário
-<<<<<<< HEAD
+
 <img src=" https://imgur.com/CeBbkcL.png">
 =======
 <img src="https://imgur.com/CeBbkcL.png">
->>>>>>> remotes/origin/main
+
 
 * Pedido
 <img src = "https://imgur.com/GrquuyO.png">
