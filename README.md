@@ -15,7 +15,7 @@ aos moldes da famosa plataforma e lider de mercado Steam.
 O fluxo principal da plataforma ecommerce steam consiste em um sistema de market e biblioteca(onde os jogos adquiridos serão colocados),
 abaixo um exemplo da plataforma.
 
-<img src=" https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/27766192/ac26dea63042eec4886d5fa27854517ce374b11e.jpg">
+<img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/27766192/ac26dea63042eec4886d5fa27854517ce374b11e.jpg">
 
 
 A Arquitetura da nossa plataforma é constituida por:
@@ -62,7 +62,7 @@ http://localhost:8080/swagger-ui/index.html
 ##### Endpoints
 * Usuário
 
-<img src=" https://imgur.com/CeBbkcL.png">
+<img src= "https://imgur.com/CeBbkcL.png">
 
 * Pedido
 <img src = "https://imgur.com/GrquuyO.png">
@@ -182,21 +182,11 @@ POST:/items/?pedidoId=X&produtoId=X
 
 ## 4° Etapa - Criando uma biblioteca
 
-1. Criando uma biblioteca
-```
-POST:/biblioteca/
-```
 
-2. Atualizando uma biblioteca com um pedido de pagamento confirmado
+1. Atualizando uma biblioteca com um pedido de pagamento confirmado
 
 Deverá receber um id de da biblioteca e id do pedido para adicionar o jogo a biblioteca
 ```
 PATCH: /biblioteca/1?pedido=1
 ```
 
-3. Adicionado a biblioteca no usuário
-
-Deverá receber o id do usuário e o id da biblioteca.
-```
-PATCH: usuario/biblioteca/1?biblioteca=1
-```
