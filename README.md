@@ -3,7 +3,7 @@ API para prover recursos para nossa plataforma de Ecommerce de games
 
 ### Autor
 
-- [José Edson Teles Fontes Junior](https://github.com/edsontelesfontes)
+- [José Edson Teles Fontes Junior](https://www.linkedin.com/in/edsontelesfontes/)
 
 Repositório contendo o código fonte do projeto Ecommerce de Jogos
 
