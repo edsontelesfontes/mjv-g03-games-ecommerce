@@ -22,8 +22,6 @@ A Arquitetura da nossa plataforma é constituida por:
 #### Diagrama de classe
 
 <img src ="https://imgur.com/cZV9idi.png">
-=======
-<img src ="https://imgur.com/GusJzfW.png">
 
 **Pacotes:**
 
@@ -64,9 +62,6 @@ http://localhost:8080/swagger-ui/index.html
 * Usuário
 
 <img src=" https://imgur.com/CeBbkcL.png">
-=======
-<img src="https://imgur.com/CeBbkcL.png">
-
 
 * Pedido
 <img src = "https://imgur.com/GrquuyO.png">
