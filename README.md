@@ -52,6 +52,7 @@ A Arquitetura da nossa plataforma é constituida por:
 * Swagger
 * Map Struct
 * Postman
+* Via CEP consumido via rest template.
 
 Para a nossa demonstração estamos interagindo com nossa api diretamente atrvés do postman, mas também pode ser acessada através do swagger confome url:
 ```
@@ -75,6 +76,7 @@ http://localhost:8080/swagger-ui/index.html
 ### 1° Etapa - Cadastramento de usuarios.
 
 1. Adicionando um usuario
+
 ```
 POST:/usuario/
 ```
@@ -85,23 +87,18 @@ POST:/usuario/
   "dataDeRegistro": "2022-11-03",
   "email": "string",
   "endereco": {
-    "lougradouro": "string",
+    "logradouro": "string",
     "cep": "string",
     "numero": 0,
-    "cidade": "string",
+    "localidade": "string",
     "bairro": "string",
     "complemento": "string",
     "uf": "string",
-    "pais": "string"
   },
   "cpf": "string"
 }
 ```
-2. Consultando a lista de usuários com ID do banco de dados.
-```
-GET:/usuarios/{id}
-```
-**retornando um json com a lista das profissoes. ver banco de dados**
+O Endereço do usuário também pode ser adicionado somente passando o cep e o número da casa.
 ```
 {
   "nome": "string",
@@ -109,17 +106,15 @@ GET:/usuarios/{id}
   "dataDeRegistro": "2022-11-03",
   "email": "string",
   "endereco": {
-    "lougradouro": "string",
     "cep": "string",
     "numero": 0,
-    "cidade": "string",
-    "bairro": "string",
-    "complemento": "string",
-    "uf": "string",
-    "pais": "string"
   },
   "cpf": "string"
 }
+```
+2. Consultando a lista de usuários com ID do banco de dados.
+```
+GET:/usuarios/{id}
 ```
 3. Deletando o usuário
 ```
