@@ -33,6 +33,7 @@ A Arquitetura da nossa plataforma é constituida por:
 | service    | Classes contendo todas as regras de negócio da aplicação                                                  |
 | controller | Recursos HTTPs para disponibilizar o acesso as funcionalidades da aplicação                               |
 | Mapper     | Recursos para mapeamento de dtos e entidades para criar uma "blindagem" gerando consistência da nossa API |
+| Utils      | Recursos para utilidades do sistema, como classes para consumos de api, formatações, etc...               |
 
 **Módulos:**
 
