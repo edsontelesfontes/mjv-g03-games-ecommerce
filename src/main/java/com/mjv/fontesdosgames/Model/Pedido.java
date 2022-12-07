@@ -1,5 +1,6 @@
 package com.mjv.fontesdosgames.Model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mjv.fontesdosgames.Enums.EnumStatusPagamento;
 
 import javax.persistence.*;
@@ -7,6 +8,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "pedido")
@@ -25,7 +27,7 @@ public class Pedido {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "item_id")
-    private List<PedidoItem> pedidoItems;
+    private Set<PedidoItem> pedidoItems;
 
     public Long getId() {
         return id;
@@ -35,6 +37,7 @@ public class Pedido {
         this.id = id;
     }
 
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     public LocalDateTime getDataDaCompra() {
         return dataDaCompra;
     }
@@ -60,11 +63,20 @@ public class Pedido {
     }
 
 
-    public List<PedidoItem> getPedidoItems() {
+//    public List<PedidoItem> getPedidoItems() {
+//        return pedidoItems;
+//    }
+//
+//    public void setPedidoItems(List<PedidoItem> pedidoItems) {
+//        this.pedidoItems = pedidoItems;
+//    }
+
+
+    public Set<PedidoItem> getPedidoItems() {
         return pedidoItems;
     }
 
-    public void setPedidoItems(List<PedidoItem> pedidoItems) {
+    public void setPedidoItems(Set<PedidoItem> pedidoItems) {
         this.pedidoItems = pedidoItems;
     }
 }

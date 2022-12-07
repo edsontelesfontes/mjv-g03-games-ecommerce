@@ -12,6 +12,8 @@ public class UsuarioPutRequestBody {
     private String email;
     private Endereco endereco;
 
+    private String cpf;
+
     public Long getId() {
         return id;
     }
@@ -58,5 +60,13 @@ public class UsuarioPutRequestBody {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 }

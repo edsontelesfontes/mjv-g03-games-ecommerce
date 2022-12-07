@@ -68,7 +68,7 @@ public class PedidoService {
     public Pedido addItem(Long id, Long itemId) {
         PedidoItem pedidoItem = pedidoItemRepository.findById(itemId).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST));
         Pedido pedido = findOrderByIdOrThrowException(id);
-
+        pedido.setValorTotalDaCompra(pedidoItem.getProduto().getPreco());
         pedido.getPedidoItems().add(pedidoItem);
 
         return pedidoRepository.save(pedido);
@@ -81,6 +81,15 @@ public class PedidoService {
 
         pedido.getPedidoItems().remove(pedidoItem);
 
+        return pedidoRepository.save(pedido);
+    }
+
+    public Pedido alterarStatusPagamento(Long id, String statusPagamento) {
+        Pedido pedido = findOrderByIdOrThrowException(id);
+
+        if (statusPagamento.contains("confirmado")) {
+            pedido.setEnumStatusPagamento(EnumStatusPagamento.valueOf(statusPagamento.toUpperCase()));
+        }
         return pedidoRepository.save(pedido);
     }
 }

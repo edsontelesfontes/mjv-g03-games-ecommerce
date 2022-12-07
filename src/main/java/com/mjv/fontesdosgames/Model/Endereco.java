@@ -3,24 +3,26 @@ package com.mjv.fontesdosgames.Model;
 import javax.persistence.*;
 
 //@Embeddable
-@Entity
-@Table(name = "tab_endereco")
+//@Entity
+//@Table(name = "tab_endereco")
+@Embeddable
+
 public class Endereco {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long Id;
 
     @Column(name = "logradouro",length = 50, nullable = false)
-    private String lougradouro;
+    private String logradouro;
     @Column(name = "cep",length = 10, nullable = false)
     private String cep;
     @Column(name = "numero",length = 6, nullable = false)
 
     private Integer numero;
-    @Column(name = "cidade",length = 50, nullable = false)
+    @Column(name = "localidade",length = 50, nullable = false)
 
-    private String cidade;
+    private String localidade;
     @Column(name = "bairro",length = 30, nullable = false)
     private String bairro;
     @Column(name = "complemento",length = 50, nullable = true)
@@ -29,33 +31,23 @@ public class Endereco {
     @Column(name = "uf", length = 2, nullable = false)
 
     private String uf;
-    @Column(name = "pais",length = 15, nullable = false)
-
-    private String pais;
 
 
-    public Long getId() {
-        return Id;
+//    public Long getId() {
+//        return Id;
+//    }
+//
+//    public void setId(Long id) {
+//        Id = id;
+//    }
+
+
+    public String getLogradouro() {
+        return logradouro;
     }
 
-    public void setId(Long id) {
-        Id = id;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public String getLougradouro() {
-        return lougradouro;
-    }
-
-    public void setLougradouro(String lougradouro) {
-        this.lougradouro = lougradouro;
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
     }
 
     public String getCep() {
@@ -72,6 +64,14 @@ public class Endereco {
 
     public void setNumero(Integer numero) {
         this.numero = numero;
+    }
+
+    public String getLocalidade() {
+        return localidade;
+    }
+
+    public void setLocalidade(String localidade) {
+        this.localidade = localidade;
     }
 
     public String getBairro() {
@@ -96,13 +96,5 @@ public class Endereco {
 
     public void setUf(String uf) {
         this.uf = uf;
-    }
-
-    public String getPais() {
-        return pais;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
     }
 }

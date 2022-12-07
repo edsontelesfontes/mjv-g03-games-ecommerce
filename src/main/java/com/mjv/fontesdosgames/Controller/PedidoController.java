@@ -49,6 +49,11 @@ public class PedidoController {
         return ResponseEntity.ok(pedidoService.addItem(id, itemId));
     }
 
+    @PatchMapping("/pedidoStatus/{id}")
+    public ResponseEntity<Pedido> alterarStatusPagamento(@PathVariable Long id, @RequestParam("status") String statusPagamento){
+        return ResponseEntity.ok(pedidoService.alterarStatusPagamento(id, statusPagamento));
+    }
+
     @PatchMapping("/{id}/removeritem")
     public ResponseEntity<Pedido> removerProduto(@PathVariable long id, @RequestParam ("itemId") long itemId){
         return ResponseEntity.ok(pedidoService.removeItem(id, itemId));

@@ -42,7 +42,6 @@ public class UsuarioController {
 
     @PostMapping("/")
     public ResponseEntity<Usuario> save (@RequestBody UsuarioPostRequestBody usuarioPostRequestBody){
-
         return ResponseEntity.ok(usuarioService.save(usuarioPostRequestBody));
     }
 
@@ -60,6 +59,12 @@ public class UsuarioController {
     @PatchMapping("/{id}")
     public ResponseEntity<Usuario> addEndereco(@PathVariable long id, @RequestBody EnderecoPutRequestBody enderecoPutRequestBody){
         usuarioService.addEndereco(id, enderecoPutRequestBody);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @PatchMapping("/biblioteca/{id}")
+    public ResponseEntity<Usuario> addBiblioteca(@PathVariable long id, @RequestParam(name = "biblioteca") long idBiblioteca){
+        usuarioService.addBiblioteca(id, idBiblioteca);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

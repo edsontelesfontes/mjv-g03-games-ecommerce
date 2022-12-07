@@ -5,14 +5,13 @@ import javax.persistence.Column;
 public class EnderecoPutRequestBody {
     private Long Id;
 
-    private String lougradouro;
+    private String logradouro;
     private String cep;
     private Integer numero;
-    private String cidade;
+    private String localidade;
     private String bairro;
     private String complemento;
     private String uf;
-    private String pais;
 
     public Long getId() {
         return Id;
@@ -22,12 +21,12 @@ public class EnderecoPutRequestBody {
         Id = id;
     }
 
-    public String getLougradouro() {
-        return lougradouro;
+    public String getLogradouro() {
+        return logradouro;
     }
 
-    public void setLougradouro(String lougradouro) {
-        this.lougradouro = lougradouro;
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
     }
 
     public String getCep() {
@@ -46,12 +45,12 @@ public class EnderecoPutRequestBody {
         this.numero = numero;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getLocalidade() {
+        return localidade;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setLocalidade(String localidade) {
+        this.localidade = localidade;
     }
 
     public String getBairro() {
@@ -76,13 +75,5 @@ public class EnderecoPutRequestBody {
 
     public void setUf(String uf) {
         this.uf = uf;
-    }
-
-    public String getPais() {
-        return pais;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
     }
 }

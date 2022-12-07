@@ -1,5 +1,7 @@
 package com.mjv.fontesdosgames.Model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -11,20 +13,24 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
-    @Column(name = "quantidade", length = 100, nullable = false)
+    @Column(name = "nome", length = 100, nullable = false)
 
     private String nome;
     @Column(name = "senha", length = 15, nullable = false)
     private String senha;
-    @Column(name = "dataDeRegistro", nullable = false)
-
+    @Column(name = "dataDeRegistro", nullable = true)
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataDeRegistro;
     @Column(name = "email", length = 50, nullable = false)
     private String email;
+
+    @Column(length = 11, nullable = false,unique = true)
+    private String cpf;
     //@Embedded
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "endereco_id")
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "endereco_id")
+    @Embedded
     private Endereco endereco;
 
 
@@ -32,6 +38,13 @@ public class Usuario {
     @JoinColumn(name = "pedido_id")
     private List<Pedido> pedidoList = new ArrayList<>();
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "biblioteca_id")
+    private Biblioteca biblioteca;
+
+    public void setPedidoList(List<Pedido> pedidoList) {
+        this.pedidoList = pedidoList;
+    }
 
     public Long getId() {
         return Id;
@@ -61,6 +74,15 @@ public class Usuario {
         return dataDeRegistro;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+
     public void setDataDeRegistro(LocalDate dataDeRegistro) {
         this.dataDeRegistro = dataDeRegistro;
     }
@@ -68,6 +90,7 @@ public class Usuario {
     public String getEmail() {
         return email;
     }
+
 
     public void setEmail(String email) {
         this.email = email;
@@ -88,4 +111,13 @@ public class Usuario {
 //    public void setPedidoList(List<Pedido> pedidoList) {
 //        this.pedidoList = pedidoList;
 //    }
+
+
+    public Biblioteca getBiblioteca() {
+        return biblioteca;
+    }
+
+    public void setBiblioteca(Biblioteca biblioteca) {
+        this.biblioteca = biblioteca;
+    }
 }

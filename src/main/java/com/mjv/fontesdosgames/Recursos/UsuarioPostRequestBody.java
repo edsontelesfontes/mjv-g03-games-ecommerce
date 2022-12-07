@@ -1,5 +1,6 @@
 package com.mjv.fontesdosgames.Recursos;
 
+import com.mjv.fontesdosgames.Model.Biblioteca;
 import com.mjv.fontesdosgames.Model.Endereco;
 
 import javax.persistence.CascadeType;
@@ -14,6 +15,9 @@ public class UsuarioPostRequestBody {
     private LocalDate dataDeRegistro;
     private String email;
     private Endereco endereco;
+
+    private Biblioteca biblioteca;
+    private String cpf;
 
     public String getNome() {
         return nome;
@@ -53,5 +57,21 @@ public class UsuarioPostRequestBody {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public Biblioteca getBiblioteca() {
+        return biblioteca;
+    }
+
+    public void setBiblioteca(Biblioteca biblioteca) {
+        this.biblioteca = biblioteca;
     }
 }
